@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+Thumbs.db
+
+# Raw Image Archives (zu groß für Git)
+Images-wordpress/
+Fotos-colored/
+gut salzig
+
+# Build artifacts
+*.pyc
+__pycache__/
+prototype/tmp-*
+/tmp/
+
+# IDE
+*.swp
+*.swo
+.vscode/

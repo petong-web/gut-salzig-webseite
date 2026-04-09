@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Küche & Speisekarte — gut salzig · Kreative deutsche Küche mit Fisch</title>
+<meta name="description" content="Deutsche Kreativ-Küche mit Fokus auf Fisch aus heimischen Gewässern. À la carte, Tagesgerichte und saisonale Spezialitäten direkt an der Ostsee.">
+<meta name="theme-color" content="#FBF5EC">
+<link rel="icon" type="image/svg+xml" href="assets/logo/icon-blk.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Tangerine:wght@400;700&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</content>
+</invoke>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="gut salzig">
+      <img src="assets/logo/logo2-wht.svg" alt="gut salzig" class="logo-wht">
+      <img src="assets/logo/logo2-blk.svg" alt="" class="logo-blk" aria-hidden="true">
+    </a>
+
+    <nav class="nav__menu">
+      <a href="index.html">Home</a>
+      <a href="kueche.html">Küche</a>
+      <a href="brunch.html">Brunch</a>
+      <a href="events.html">Events</a>
+      <a href="feiern.html">Feiern</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="nav__right">
+      <a href="tel:043431859155" class="nav__phone">04343 1859155</a>
+      <a href="kontakt.html" class="nav__reserve">Reservieren</a>
+      <button class="nav__burger" id="navBurger" aria-label="Menü öffnen">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu">
+  <div class="menu__top">
+    <div class="menu__brand">
+      <img src="assets/logo/logo2-blk.svg" alt="gut salzig" style="height:44px;width:auto;">
+    </div>
+    <button class="menu__close" id="menuClose" aria-label="Menü schließen">×</button>
+  </div>
+
+  <div class="menu__grid">
+    <ul class="menu__list">
+      <li><a href="index.html"   data-num="01">Home</a></li>
+      <li><a href="kueche.html"  data-num="02">Küche</a></li>
+      <li><a href="brunch.html"  data-num="03">Brunch &amp; Frühstück</a></li>
+      <li><a href="events.html"  data-num="04">Events</a></li>
+      <li><a href="feiern.html"  data-num="05">Hochzeiten &amp; Feiern</a></li>
+      <li><a href="galerie.html" data-num="06">Galerie</a></li>
+      <li><a href="kontakt.html" data-num="07">Kontakt</a></li>
+    </ul>
+
+    <aside class="menu__aside">
+      <h4>Besuch uns</h4>
+      <p>Direkt an der Kieler Förde.<br>Uferkoppel 10, 24235 Stein</p>
+      <div class="hours">
+        <span><strong>Do–Fr</strong> 17 – 20 Uhr</span>
+        <span><strong>Sa</strong> Frühstück ab 09 · bis 20 Uhr</span>
+        <span><strong>So</strong> Brunch 10 – 14 · bis 20 Uhr</span>
+      </div>
+      <a href="tel:043431859155" class="link">04343 1859155 →</a>
+    </aside>
+  </div>
+
+  <div class="menu__bottom">
+    <span>© 2026 gut salzig</span>
+    <div class="menu__social">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Google</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- HERO -->
+<section class="subpage-hero">
+  <div class="subpage-hero__media">
+    <img src="assets/images/tile-alacarte.jpg" alt="À la carte bei gut salzig">
+  </div>
+  <div class="subpage-hero__content">
+    <nav class="subpage-hero__breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Küche & Speisekarte</span>
+    </nav>
+    <span class="subpage-hero__eyebrow">Donnerstag – Sonntag</span>
+    <h1 class="subpage-hero__title">Aus unserer<br><em>Küche</em>.</h1>
+    <p class="subpage-hero__sub">Deutsche Kreativ-Küche mit einem klaren Herz für Fisch aus heimischen Gewässern. Wöchentlich wechselnde Tagesgerichte, sorgfältig kuratierte À-la-carte-Karte und saisonale Spezialitäten — frisch, ehrlich, mit einer Prise Salz.</p>
+  </div>
+  <div class="subpage-hero__bar">
+    <span>54°26′N · 10°14′E · Stein</span>
+    <span class="subpage-hero__bar-flight">GS · KITCHEN · 2026</span>
+    <span>Küchenzeiten: 17 – 20 Uhr</span>
+  </div>
+</section>
+
+<!-- Tagesgerichte (dynamisch) -->
+<section class="subpage-section">
+  <div class="wrap">
+    <div class="page-head reveal">
+      <span class="eyebrow">Diese Woche</span>
+      <h2>Tages-<em>gerichte</em>.</h2>
+      <p>Unsere Tagesgerichte wechseln wöchentlich — abhängig davon, was der Kutter am Morgen anlandet und was die Saison hergibt. Jedes Gericht ist ein kleiner Moment gut salzig.</p>
+    </div>
+
+    <div class="celebrations__grid reveal-stagger" style="max-width: 1200px; margin-inline: auto;">
+      <article class="celebration">
+        <img src="assets/images/dish-2.jpg" alt="Ostsee-Dorsch">
+        <div class="luggage-tag" aria-hidden="true">
+          <span class="luggage-tag__number">No. 01</span>
+          <span class="luggage-tag__label">Tagesfisch</span>
+          <span class="luggage-tag__code">GS · DRS</span>
+        </div>
+        <div class="celebration__body">
+          <h3>Ostsee-<em>Dorsch</em></h3>
+          <p>Salzkartoffel-Stampf · Spinat · Senfbeurre — 24 €</p>
+        </div>
+      </article>
+      <article class="celebration">
+        <img src="assets/images/dish-3.jpg" alt="Wochengericht">
+        <div class="luggage-tag" aria-hidden="true">
+          <span class="luggage-tag__number">No. 02</span>
+          <span class="luggage-tag__label">Vegetarisch</span>
+          <span class="luggage-tag__code">GS · VEG</span>
+        </div>
+        <div class="celebration__body">
+          <h3>Ofen-<em>Gemüse</em></h3>
+          <p>Kichererbsen · Tahini · Minze — 17 €</p>
+        </div>
+      </article>
+      <article class="celebration">
+        <img src="assets/images/dish-1.jpg" alt="Signature Dessert">
+        <div class="luggage-tag" aria-hidden="true">
+          <span class="luggage-tag__number">No. 03</span>
+          <span class="luggage-tag__label">Signature</span>
+          <span class="luggage-tag__code">GS · SWT</span>
+        </div>
+        <div class="celebration__body">
+          <h3>Signature-<em>Dessert</em></h3>
+          <p>Sanddorn · weiße Schokolade · Hafer — 9 €</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- À la carte Menü -->
+<section class="subpage-section subpage-section--cream">
+  <div class="wrap">
+    <div class="page-head reveal">
+      <span class="eyebrow">À la carte</span>
+      <h2>Unsere <em>Karte</em>.</h2>
+      <p>Eine kleine, sorgfältig kuratierte Auswahl — kein endloses Menü, sondern ausgewählte Klassiker und Kreativ-Gerichte. Alle Preise in Euro, inkl. MwSt.</p>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-card__section">
+        <h3 class="menu-card__title"><em>Zum</em> Start</h3>
+        <ul class="menu-card__list">
+          <li><span class="dot"></span><span class="name">Salziger Fischteller</span><span class="leader"></span><span class="price">19</span></li>
+          <li><span class="dot"></span><span class="name">Matjes · Räucherlachs · Nordsee-Krabben · Meerrettich-Crème</span><span class="leader"></span><span class="price">—</span></li>
+          <li><span class="dot"></span><span class="name">Bruchetta mit Tomate, Basilikum &amp; Parmesan</span><span class="leader"></span><span class="price">9</span></li>
+          <li><span class="dot"></span><span class="name">Kürbissuppe mit Sanddorn &amp; Kürbiskernöl</span><span class="leader"></span><span class="price">8</span></li>
+          <li><span class="dot"></span><span class="name">Rote Bete Carpaccio mit Ziegenkäse &amp; Walnuss</span><span class="leader"></span><span class="price">12</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-card__section">
+        <h3 class="menu-card__title"><em>Aus</em> dem Meer</h3>
+        <ul class="menu-card__list">
+          <li><span class="dot"></span><span class="name">Pannfisch Holsteiner Art mit Bratkartoffeln &amp; Senfsauce</span><span class="leader"></span><span class="price">22</span></li>
+          <li><span class="dot"></span><span class="name">Ostsee-Dorsch auf Salzkartoffel-Stampf &amp; Spinat</span><span class="leader"></span><span class="price">24</span></li>
+          <li><span class="dot"></span><span class="name">Scholle „Finkenwerder" mit Speck, Krabben &amp; Salzkartoffeln</span><span class="leader"></span><span class="price">26</span></li>
+          <li><span class="dot"></span><span class="name">Labskaus mit Rollmops, Spiegelei &amp; Gurke</span><span class="leader"></span><span class="price">18</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-card__section">
+        <h3 class="menu-card__title"><em>Vom</em> Land</h3>
+        <ul class="menu-card__list">
+          <li><span class="dot"></span><span class="name">Holsteiner Burger · Bio-Rind · Cheddar · Bratkartoffeln</span><span class="leader"></span><span class="price">18</span></li>
+          <li><span class="dot"></span><span class="name">Kalbsschnitzel Wiener Art mit Kartoffelsalat</span><span class="leader"></span><span class="price">24</span></li>
+          <li><span class="dot"></span><span class="name">Rumpsteak 250g mit Ofenkartoffel &amp; Kräuterbutter</span><span class="leader"></span><span class="price">32</span></li>
+          <li><span class="dot"></span><span class="name">Spareribs mit BBQ-Glasur &amp; Coleslaw</span><span class="leader"></span><span class="price">21</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-card__section">
+        <h3 class="menu-card__title"><em>Aus</em> dem Garten</h3>
+        <ul class="menu-card__list">
+          <li><span class="dot"></span><span class="name">Strandgarten-Bowl · Ofengemüse · Kichererbsen · Tahini</span><span class="leader"></span><span class="price">17</span></li>
+          <li><span class="dot"></span><span class="name">Risotto mit Steinpilzen &amp; gehobeltem Pecorino</span><span class="leader"></span><span class="price">19</span></li>
+          <li><span class="dot"></span><span class="name">Gnocchi mit Salbei-Butter &amp; gerösteten Walnüssen</span><span class="leader"></span><span class="price">16</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-card__section">
+        <h3 class="menu-card__title"><em>Zum</em> Abschluss</h3>
+        <ul class="menu-card__list">
+          <li><span class="dot"></span><span class="name">Crème brûlée mit Vanille-Bourbon</span><span class="leader"></span><span class="price">8</span></li>
+          <li><span class="dot"></span><span class="name">Sanddorn-Parfait mit weißer Schokolade</span><span class="leader"></span><span class="price">9</span></li>
+          <li><span class="dot"></span><span class="name">Rote Grütze mit Vanillesauce</span><span class="leader"></span><span class="price">7</span></li>
+          <li><span class="dot"></span><span class="name">Käse-Auswahl · regionale Sorten mit Früchtebrot</span><span class="leader"></span><span class="price">12</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 3rem;" class="reveal">
+      <a href="kontakt.html" class="btn btn--primary">Tisch reservieren <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophie -->
+<section class="parallax" data-parallax>
+  <div class="parallax__bg" data-parallax-bg style="background-image:url('assets/images/hero-1.jpg')"></div>
+  <div class="parallax__content reveal">
+    <span class="eyebrow">Unsere Philosophie</span>
+    <h2>Frisch aus der Region.<br><em>Jeden Tag.</em></h2>
+    <p>Wir arbeiten mit Kuttern aus der Kieler Förde, Bauern aus der Probstei und Winzern aus der Pfalz. Was nicht regional ist, kommt aus direktem Handel. Was nicht saisonal ist, steht nicht auf der Karte.</p>
+    <a href="feiern.html" class="btn btn--accent">Eure Feier planen <span class="arrow">→</span></a>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="wrap-wide">
+    <div class="footer__main">
+
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="footer__brand">
+          <img src="assets/logo/logo2-wht.svg" alt="gut salzig">
+        </a>
+        <p class="footer__tagline">…wie ein Tag Urlaub am Meer.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Google Reviews">Go</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Erkunden</h4>
+        <nav class="footer__nav-list">
+          <a href="index.html">Home</a>
+          <a href="kueche.html">Küche</a>
+          <a href="brunch.html">Sonntagsbrunch</a>
+          <a href="events.html">Events</a>
+          <a href="feiern.html">Hochzeiten &amp; Feiern</a>
+          <a href="galerie.html">Galerie</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Besuch uns</h4>
+        <address class="footer__address">
+          Uferkoppel 10<br>
+          24235 Stein<br>
+          an der Kieler Förde
+        </address>
+        <a href="tel:043431859155" class="footer__contact">04343 1859155</a>
+        <a href="mailto:flaschenpost@gut-salzig.de" class="footer__contact">flaschenpost@gut-salzig.de</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Flight Schedule</h4>
+        <div class="flight-schedule">
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Mo–Mi</span>
+            <span>Ruhetag</span>
+            <span class="flight-schedule__status flight-schedule__status--closed">Closed</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Do · Fr</span>
+            <span>17 – 20</span>
+            <span class="flight-schedule__status flight-schedule__status--ontime">On&nbsp;Time</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Samstag</span>
+            <span>09 – 20</span>
+            <span class="flight-schedule__status flight-schedule__status--ontime">On&nbsp;Time</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Sonntag</span>
+            <span>10 – 20</span>
+            <span class="flight-schedule__status flight-schedule__status--boarding">Boarding</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 gut salzig Beach Club &amp; Restaurant</span>
+      <span class="footer__bottom-mark">
+        <img src="assets/logo/icon-wht.svg" alt="" aria-hidden="true">
+        <span>gut salzig · Stein · Ostsee</span>
+      </span>
+      <div class="footer__legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="sound-toggle" id="soundToggle" aria-label="Boarding-Sound abspielen">
+  <span class="sound-toggle__ring" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+</button>
+
+<aside class="cockpit" id="cockpit" aria-label="Wetter an der Kieler Förde">
+  <span class="cockpit__dot"></span>
+  <div class="cockpit__label">Cockpit<br>Förde</div>
+  <div class="cockpit__divider"></div>
+  <div class="cockpit__data">
+    <span class="cockpit__temp" id="cockpitTemp">19°</span>
+    <span class="cockpit__meta" id="cockpitMeta">Sonne · Wind 12 kn</span>
+  </div>
+  <button class="cockpit__close" id="cockpitClose" aria-label="Cockpit-Widget schließen">×</button>
+</aside>
+
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
