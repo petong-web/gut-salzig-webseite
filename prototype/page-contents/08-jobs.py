@@ -96,6 +96,7 @@ build(
 
       <!-- KÜCHE -->
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-kueche.jpg" alt="Küche"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Küche</span>
@@ -125,6 +126,7 @@ build(
       </article>
 
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-team-1.jpg" alt="Küchenhilfe"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Küche</span>
@@ -154,6 +156,7 @@ build(
 
       <!-- SERVICE & EVENTS -->
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-service.jpg" alt="Service"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Service</span>
@@ -182,6 +185,7 @@ build(
       </article>
 
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-team-2.jpg" alt="Events"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Events</span>
@@ -210,6 +214,7 @@ build(
       </article>
 
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-team-3.jpg" alt="Frühstück"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Service</span>
@@ -239,6 +244,7 @@ build(
 
       <!-- STRAND-IMBISS -->
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-imbiss.jpg" alt="Imbiss"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Imbiss</span>
@@ -267,6 +273,7 @@ build(
       </article>
 
       <article class="job-card">
+        <div class="job-card__photo"><img src="assets/images/job-team-4.jpg" alt="Verkauf"></div>
         <div class="job-card__header">
           <div class="job-card__brand"><span class="job-card__brand-icon">✈</span>GUT SALZIG</div>
           <span class="job-card__dept">Imbiss</span>
@@ -296,6 +303,7 @@ build(
 
       <!-- INITIATIV -->
       <article class="job-card" style="border-style: dashed;">
+        <div class="job-card__photo"><img src="assets/images/job-team-5.jpg" alt="Team"></div>
         <div class="job-card__header" style="background: var(--accent);">
           <div class="job-card__brand"><span class="job-card__brand-icon" style="color:#fff;">✈</span>GUT SALZIG</div>
           <span class="job-card__dept" style="color:#fff;">Open</span>

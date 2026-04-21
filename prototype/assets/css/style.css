@@ -1197,7 +1197,7 @@ section { padding-block: clamp(5rem, 10vw, 10rem); position: relative; }
   border-color: var(--ink);
 }
 
-/* Job Cards — Boarding Pass variant */
+/* Job Cards — Boarding Pass with Photo */
 .job-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1210,9 +1210,39 @@ section { padding-block: clamp(5rem, 10vw, 10rem); position: relative; }
   font-family: var(--ff-mono);
   overflow: hidden;
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 320px;
 }
+.job-card__photo {
+  grid-row: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-3);
+  border-right: 2px dashed var(--line);
+}
+.job-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s var(--ease);
+}
+.job-card:hover .job-card__photo img { transform: scale(1.08); }
+/* Round perforation notches */
+.job-card__photo::before,
+.job-card__photo::after {
+  content: '';
+  position: absolute;
+  right: -11px;
+  width: 22px;
+  height: 22px;
+  background: var(--bg);
+  border-radius: 50%;
+  z-index: 4;
+}
+.job-card__photo::before { top: -11px; }
+.job-card__photo::after  { bottom: -11px; }
 .job-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 28px 56px -22px rgba(31,20,12,0.22);
@@ -1379,9 +1409,13 @@ section { padding-block: clamp(5rem, 10vw, 10rem); position: relative; }
 @media (max-width: 1100px) {
   .job-values { grid-template-columns: 1fr 1fr; }
   .job-cards { grid-template-columns: 1fr; }
+  .job-card { grid-template-columns: 160px 1fr; }
 }
 @media (max-width: 720px) {
   .job-values { grid-template-columns: 1fr; }
+  .job-card { grid-template-columns: 1fr; grid-template-rows: 200px auto 1fr auto; }
+  .job-card__photo { grid-row: auto; border-right: 0; border-bottom: 2px dashed var(--line); }
+  .job-card__photo::before, .job-card__photo::after { display: none; }
 }
 
 /* =========================================================
