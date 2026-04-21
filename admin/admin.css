@@ -426,7 +426,7 @@ tr:hover td { background: rgba(201,117,82,0.04); }
 }
 
 /* ── Responsive ─────────────────────────────────────── */
-@media (max-width: 900px) {
+@media (max-width: 640px) {
   .admin-wrap { grid-template-columns: 1fr; }
   .sidebar {
     position: fixed;

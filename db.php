@@ -11,9 +11,10 @@ function db(): PDO
 {
     global $pdo;
     if ($pdo === null) {
+        $socket = defined('DB_SOCKET') ? ';unix_socket=' . DB_SOCKET : '';
         $dsn = sprintf(
-            'mysql:host=%s;dbname=%s;charset=%s',
-            DB_HOST, DB_NAME, DB_CHARSET
+            'mysql:host=%s;dbname=%s;charset=%s%s',
+            DB_HOST, DB_NAME, DB_CHARSET, $socket
         );
         $pdo = new PDO($dsn, DB_USER, DB_PASS, [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
