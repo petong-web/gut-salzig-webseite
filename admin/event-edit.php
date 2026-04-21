@@ -19,7 +19,8 @@ $categories = [
 // Leeres Event-Template
 $event = [
     'title' => '', 'slug' => '', 'iata_code' => '', 'event_date' => date('Y-m-d'),
-    'event_time' => '18:00', 'category' => 'Live Musik', 'category_icon' => '♪',
+    'event_time' => '18:00', 'event_end_date' => '', 'event_end_time' => '',
+    'category' => 'Live Musik', 'category_icon' => '♪',
     'ticket_type' => 'free', 'price' => '', 'gate' => 'Terrasse',
     'description' => '', 'photo' => '', 'pnr_code' => '', 'is_active' => 1,
 ];
@@ -42,6 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event['iata_code']     = strtoupper(trim($_POST['iata_code'] ?? ''));
     $event['event_date']    = $_POST['event_date'] ?? date('Y-m-d');
     $event['event_time']    = $_POST['event_time'] ?? '18:00';
+    $event['event_end_date']= !empty($_POST['event_end_date']) ? $_POST['event_end_date'] : null;
+    $event['event_end_time']= !empty($_POST['event_end_time']) ? $_POST['event_end_time'] : null;
     $event['category']      = $_POST['category'] ?? 'Live Musik';
     $event['category_icon'] = $categories[$event['category']] ?? '♪';
     $event['ticket_type']   = $_POST['ticket_type'] ?? 'free';
@@ -68,11 +71,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($isEdit) {
             dbExec("UPDATE events SET
                 title=?, slug=?, iata_code=?, event_date=?, event_time=?,
+                event_end_date=?, event_end_time=?,
                 category=?, category_icon=?, ticket_type=?, price=?, gate=?,
                 description=?, photo=?, pnr_code=?, is_active=?
                 WHERE id=?", [
                 $event['title'], $event['slug'], $event['iata_code'],
                 $event['event_date'], $event['event_time'],
+                $event['event_end_date'], $event['event_end_time'],
                 $event['category'], $event['category_icon'],
                 $event['ticket_type'], $event['price'], $event['gate'],
                 $event['description'], $event['photo'], $event['pnr_code'],
@@ -81,11 +86,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             flash('success', 'Event aktualisiert.');
         } else {
             $newId = dbInsert("INSERT INTO events
-                (title, slug, iata_code, event_date, event_time, category, category_icon,
-                 ticket_type, price, gate, description, photo, pnr_code, is_active)
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+                (title, slug, iata_code, event_date, event_time, event_end_date, event_end_time,
+                 category, category_icon, ticket_type, price, gate, description, photo, pnr_code, is_active)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
                 $event['title'], $event['slug'], $event['iata_code'],
                 $event['event_date'], $event['event_time'],
+                $event['event_end_date'], $event['event_end_time'],
                 $event['category'], $event['category_icon'],
                 $event['ticket_type'], $event['price'], $event['gate'],
                 $event['description'], $event['photo'], $event['pnr_code'],
@@ -145,15 +151,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
-    <!-- Datum + Uhrzeit -->
+    <!-- Datum + Uhrzeit VON -->
     <div class="form-row">
       <div class="field">
-        <label for="event_date">Datum</label>
+        <label for="event_date">Datum von</label>
         <input type="date" id="event_date" name="event_date" value="<?= h($event['event_date']) ?>" required>
       </div>
       <div class="field">
-        <label for="event_time">Uhrzeit</label>
+        <label for="event_time">Uhrzeit von</label>
         <input type="time" id="event_time" name="event_time" value="<?= h($event['event_time']) ?>">
+      </div>
+    </div>
+
+    <!-- Datum + Uhrzeit BIS (optional) -->
+    <div class="form-row">
+      <div class="field">
+        <label for="event_end_date">Datum bis (leer = eintägig)</label>
+        <input type="date" id="event_end_date" name="event_end_date" value="<?= h($event['event_end_date'] ?? '') ?>">
+      </div>
+      <div class="field">
+        <label for="event_end_time">Uhrzeit bis</label>
+        <input type="time" id="event_end_time" name="event_end_time" value="<?= h($event['event_end_time'] ?? '') ?>">
       </div>
     </div>
 

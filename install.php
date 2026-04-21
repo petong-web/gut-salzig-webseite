@@ -53,6 +53,8 @@ CREATE TABLE IF NOT EXISTS events (
     iata_code     CHAR(3)      NOT NULL,
     event_date    DATE         NOT NULL,
     event_time    TIME         NOT NULL,
+    event_end_date DATE       DEFAULT NULL,
+    event_end_time TIME       DEFAULT NULL,
     category      VARCHAR(50)  NOT NULL,
     category_icon CHAR(5)      DEFAULT '♪',
     ticket_type   ENUM('free','ticket','reserve') NOT NULL DEFAULT 'free',
