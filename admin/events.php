@@ -2,38 +2,7 @@
 require_once __DIR__ . '/auth.php';
 $page = 'events';
 
-// Daten laden
-try {
-    switch ('events') {
-        case 'brunch':
-            $items = dbQuery("SELECT * FROM brunch ORDER BY week_date DESC LIMIT 10");
-            break;
-        case 'events':
-            $items = dbQuery("SELECT * FROM events ORDER BY event_date DESC");
-            break;
-        case 'tagesgerichte':
-            $items = dbQuery("SELECT * FROM tagesgerichte ORDER BY sort_order, id DESC");
-            break;
-        case 'speisekarte':
-            $items = dbQuery("SELECT * FROM speisekarte ORDER BY category, sort_order");
-            break;
-        case 'blog':
-            $items = dbQuery("SELECT * FROM blog ORDER BY created_at DESC");
-            break;
-        case 'jobs':
-            $items = dbQuery("SELECT * FROM jobs ORDER BY sort_order, id DESC");
-            break;
-        case 'kontakt-messages':
-            $items = dbQuery("SELECT * FROM contact_messages ORDER BY created_at DESC");
-            break;
-        case 'bewerbungen':
-            $items = dbQuery("SELECT * FROM bewerbungen ORDER BY created_at DESC");
-            break;
-    }
-} catch (Exception $e) {
-    $items = [];
-}
-$count = count($items);
+$events = dbQuery("SELECT * FROM events ORDER BY event_date DESC");
 ?>
 <!doctype html>
 <html lang="de">
@@ -47,62 +16,66 @@ $count = count($items);
 </head>
 <body>
 <div class="admin-wrap">
-
 <?php require __DIR__ . '/sidebar.php'; ?>
-
 <main class="main">
   <?= renderFlash() ?>
 
   <div class="topbar">
     <h1>✈ <em>Events</em></h1>
-    <a href="events-edit.php" class="btn-new">+ Neu erstellen</a>
+    <a href="event-edit.php" class="btn-new">+ Neues Event</a>
   </div>
 
-  <?php if (empty($items)): ?>
+  <?php if (empty($events)): ?>
     <div style="background:var(--surface);border:1px solid var(--line);padding:3rem;text-align:center;">
-      <p style="font-family:var(--ff-display);font-style:italic;font-size:1.4rem;color:var(--ink-soft);margin-bottom:1rem;">Noch keine Einträge.</p>
-      <p style="color:var(--ink-mute);font-size:0.85rem;">Erstelle den ersten Eintrag über den Button oben.</p>
+      <p style="font-family:var(--ff-display);font-style:italic;font-size:1.4rem;color:var(--ink-soft);margin-bottom:1rem;">Noch keine Events.</p>
+      <p style="color:var(--ink-mute);font-size:0.85rem;">Erstelle dein erstes Event über den Button oben.</p>
     </div>
   <?php else: ?>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Titel / Name</th>
-            <th>Status</th>
+            <th>Flight</th>
+            <th>Event</th>
             <th>Datum</th>
+            <th>Kategorie</th>
+            <th>Ticket</th>
+            <th>Status</th>
             <th>Aktionen</th>
           </tr>
         </thead>
         <tbody>
-        <?php foreach ($items as $item): ?>
+        <?php foreach ($events as $e): ?>
           <tr>
-            <td><?= $item['id'] ?></td>
-            <td><?= h($item['title'] ?? $item['name'] ?? $item['eyebrow'] ?? $item['vorname'] ?? '—') ?></td>
+            <td style="font-family:var(--ff-mono);font-size:0.75rem;font-weight:600;color:var(--accent);">
+              GS&nbsp;<?= str_pad($e['id'], 2, '0', STR_PAD_LEFT) ?>
+            </td>
+            <td>
+              <strong><?= h($e['title']) ?></strong>
+              <br><span style="font-family:var(--ff-mono);font-size:0.65rem;color:var(--ink-mute);">STN → <?= h($e['iata_code']) ?></span>
+            </td>
+            <td style="font-family:var(--ff-mono);font-size:0.78rem;">
+              <?= date('d.m.Y', strtotime($e['event_date'])) ?>
+              <br><span style="color:var(--ink-mute);"><?= date('H:i', strtotime($e['event_time'])) ?></span>
+            </td>
+            <td><?= h($e['category_icon']) ?> <?= h($e['category']) ?></td>
             <td>
               <?php
-                $active = $item['is_active'] ?? $item['is_published'] ?? $item['is_read'] ?? null;
-                if ($active !== null):
+                $tl = ['free'=>'Free','ticket'=>'Ticket','reserve'=>'Reserve'];
+                $tc = ['free'=>'var(--ink-mute)','ticket'=>'var(--accent)','reserve'=>'var(--sage)'];
               ?>
-                <span class="status <?= $active ? 'status--active' : 'status--inactive' ?>">
-                  <?= $active ? 'Aktiv' : 'Inaktiv' ?>
-                </span>
-              <?php else: ?>
-                —
-              <?php endif; ?>
+              <span style="font-family:var(--ff-mono);font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:<?= $tc[$e['ticket_type']] ?>;">
+                <?= $tl[$e['ticket_type']] ?><?= $e['price'] ? ' · '.number_format($e['price'],0).' €' : '' ?>
+              </span>
             </td>
-            <td style="font-family:var(--ff-mono);font-size:0.75rem;"><?= date('d.m.Y', strtotime($item['created_at'] ?? $item['event_date'] ?? $item['week_date'] ?? 'now')) ?></td>
-            <td class="actions">
-              <a href="events-edit.php?id=<?= $item['id'] ?>">Bearbeiten</a>
-            </td>
+            <td><span class="status <?= $e['is_active'] ? 'status--active' : 'status--inactive' ?>"><?= $e['is_active'] ? 'Aktiv' : 'Inaktiv' ?></span></td>
+            <td class="actions"><a href="event-edit.php?id=<?= $e['id'] ?>">Bearbeiten</a></td>
           </tr>
         <?php endforeach; ?>
         </tbody>
       </table>
     </div>
   <?php endif; ?>
-
 </main>
 </div>
 </body>
