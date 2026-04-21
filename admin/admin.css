@@ -87,8 +87,6 @@ input, select, textarea { font: inherit; color: inherit; }
 
 /* ── Layout: Sidebar + Main ─────────────────────────── */
 .admin-wrap {
-  display: grid;
-  grid-template-columns: var(--sidebar-w) 1fr;
   min-height: 100vh;
 }
 .sidebar {
@@ -169,6 +167,7 @@ input, select, textarea { font: inherit; color: inherit; }
 .sidebar__footer a:hover { color: #fff; }
 
 .main {
+  margin-left: var(--sidebar-w);
   padding: 2rem clamp(1.5rem, 3vw, 2.5rem);
   max-width: 1200px;
 }
@@ -426,7 +425,6 @@ tr:hover td { background: rgba(201,117,82,0.04); }
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 640px) {
-  .admin-wrap { grid-template-columns: 1fr; }
   .sidebar {
     position: fixed;
     bottom: 0;
