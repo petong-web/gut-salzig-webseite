@@ -398,8 +398,201 @@ build(
   </div>
 </section>
 
+<!-- Bewerbungsformular als Boarding Pass -->
+<section class="subpage-section" id="bewerbung">
+  <div class="wrap">
+    <div class="page-head reveal">
+      <span class="eyebrow">Jetzt bewerben</span>
+      <h2>Dein <em>Boarding Pass</em>.</h2>
+      <p>Kein Anschreiben nötig — füll einfach das Formular aus und wir melden uns persönlich bei dir.</p>
+    </div>
+
+    <form class="newsletter-pass reveal" onsubmit="event.preventDefault(); alert('Herzlichen Dank! Deine Bewerbung ist angekommen — wir melden uns persönlich bei dir.');" style="max-width:1080px; margin-inline:auto;">
+
+      <div class="newsletter-pass__photo">
+        <img src="assets/images/hero-3.jpg" alt="Beach Club gut salzig">
+        <div class="newsletter-pass__photo-overlay">
+          <div class="newsletter-pass__photo-top">
+            <span class="newsletter-pass__photo-badge">Crew Wanted</span>
+            <span class="newsletter-pass__photo-issue">Saison<br>2026</span>
+          </div>
+          <div class="newsletter-pass__photo-bottom">
+            <span class="newsletter-pass__photo-eyebrow">Bewerbung · Application</span>
+            <h3 class="newsletter-pass__photo-title">Join the<br><em>Crew</em></h3>
+            <dl class="newsletter-pass__photo-meta">
+              <div><dt>Location</dt><dd>Stein / STN</dd></div>
+              <div><dt>Team</dt><dd>gut salzig</dd></div>
+              <div><dt>Start</dt><dd>Flexibel</dd></div>
+              <div><dt>Anschreiben</dt><dd>Nicht nötig</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="newsletter-pass__main">
+        <div class="newsletter-pass__header">
+          <div class="newsletter-pass__brand">
+            <span class="newsletter-pass__brand-icon">✈</span>
+            <span class="newsletter-pass__brand-name">GUT SALZIG</span>
+          </div>
+          <span class="newsletter-pass__class">Application · Boarding Pass</span>
+        </div>
+
+        <div class="newsletter-pass__route">
+          <div class="newsletter-pass__route-item">
+            <span class="newsletter-pass__route-label">From</span>
+            <span class="newsletter-pass__iata">YOU</span>
+            <span class="newsletter-pass__city">Dein Standort</span>
+          </div>
+          <div class="newsletter-pass__arc">
+            <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+              <path d="M 4 26 Q 60 -6 116 26"/>
+              <text x="56" y="12">✈</text>
+            </svg>
+          </div>
+          <div class="newsletter-pass__route-item newsletter-pass__route-item--to">
+            <span class="newsletter-pass__route-label">To</span>
+            <span class="newsletter-pass__iata">STN</span>
+            <span class="newsletter-pass__city">Stein · Ostsee</span>
+          </div>
+        </div>
+
+        <div class="newsletter-pass__boarding">
+          <div class="newsletter-pass__boarding-item">
+            <span class="newsletter-pass__boarding-label">Flight</span>
+            <span class="newsletter-pass__boarding-value newsletter-pass__boarding-value--accent">GS · CREW</span>
+          </div>
+          <div class="newsletter-pass__boarding-item">
+            <span class="newsletter-pass__boarding-label">Gate</span>
+            <span class="newsletter-pass__boarding-value">Beach</span>
+          </div>
+          <div class="newsletter-pass__boarding-item">
+            <span class="newsletter-pass__boarding-label">Group</span>
+            <span class="newsletter-pass__boarding-value">A</span>
+          </div>
+          <div class="newsletter-pass__boarding-item">
+            <span class="newsletter-pass__boarding-label">Status</span>
+            <span class="newsletter-pass__boarding-value">Open</span>
+          </div>
+        </div>
+
+        <div class="newsletter-pass__body">
+          <div class="newsletter-pass__row">
+            <div class="newsletter-pass__field">
+              <label for="app-vorname">Vorname</label>
+              <input id="app-vorname" type="text" placeholder="Max" required>
+            </div>
+            <div class="newsletter-pass__field">
+              <label for="app-nachname">Nachname</label>
+              <input id="app-nachname" type="text" placeholder="Mustermann" required>
+            </div>
+          </div>
+          <div class="newsletter-pass__row">
+            <div class="newsletter-pass__field">
+              <label for="app-email">E-Mail</label>
+              <input id="app-email" type="email" placeholder="du@beispiel.de" required>
+            </div>
+            <div class="newsletter-pass__field">
+              <label for="app-tel">Telefon</label>
+              <input id="app-tel" type="tel" placeholder="0170 …">
+            </div>
+          </div>
+          <div class="newsletter-pass__row">
+            <div class="newsletter-pass__field">
+              <label for="app-stelle">Stelle</label>
+              <select id="app-stelle">
+                <option>Küchenchef (m/w/d)</option>
+                <option>Koch / Küchenhilfe</option>
+                <option>Servicekraft</option>
+                <option>Eventservice / Hochzeiten</option>
+                <option>Frühstücksteam</option>
+                <option>Koch im Imbiss</option>
+                <option>Verkauf &amp; Kasse</option>
+                <option>Initiativbewerbung</option>
+              </select>
+            </div>
+            <div class="newsletter-pass__field">
+              <label for="app-erfahrung">Erfahrung</label>
+              <select id="app-erfahrung">
+                <option>Ausgebildeter Koch</option>
+                <option>Koch mit Berufserfahrung</option>
+                <option>Küchenchef / Sous-Chef</option>
+                <option>Serviceerfahrung</option>
+                <option>Quereinsteiger mit Erfahrung</option>
+                <option>Ohne Erfahrung / Neueinsteiger</option>
+              </select>
+            </div>
+          </div>
+          <div class="newsletter-pass__row">
+            <div class="newsletter-pass__field">
+              <label for="app-ort">Wohnort / Bundesland</label>
+              <input id="app-ort" type="text" placeholder="z.B. Kiel, SH">
+            </div>
+            <div class="newsletter-pass__field">
+              <label for="app-start">Verfügbar ab</label>
+              <input id="app-start" type="date">
+            </div>
+          </div>
+
+          <span class="newsletter-pass__topics-label">Was brauchst du?</span>
+          <div class="newsletter-pass__topics" style="margin-bottom: 1.5rem;">
+            <label class="topic">
+              <input type="checkbox" name="needs" value="unterkunft">
+              <span class="topic__check"></span>
+              <span class="topic__label">
+                <span class="topic__title">Unterkunft</span>
+                <span class="topic__desc">Wir helfen bei der Suche</span>
+              </span>
+            </label>
+            <label class="topic">
+              <input type="checkbox" name="needs" value="vollzeit">
+              <span class="topic__check"></span>
+              <span class="topic__label">
+                <span class="topic__title">Vollzeit</span>
+                <span class="topic__desc">Saisonale Festanstellung</span>
+              </span>
+            </label>
+            <label class="topic">
+              <input type="checkbox" name="needs" value="teilzeit">
+              <span class="topic__check"></span>
+              <span class="topic__label">
+                <span class="topic__title">Teilzeit / Minijob</span>
+                <span class="topic__desc">Flexible Stunden</span>
+              </span>
+            </label>
+            <label class="topic">
+              <input type="checkbox" name="needs" value="ausbildung">
+              <span class="topic__check"></span>
+              <span class="topic__label">
+                <span class="topic__title">Ausbildung</span>
+                <span class="topic__desc">Ausbildungsplatz gesucht</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="newsletter-pass__field" style="margin-bottom: 1.5rem;">
+            <label for="app-motivation">Über mich / Motivation</label>
+            <textarea id="app-motivation" style="min-height:100px; background:transparent; border:0; border-bottom:1px solid rgba(31,20,12,0.25); padding:0.65rem 0; font-family:var(--ff-display); font-style:italic; font-weight:300; font-size:1.05rem; color:var(--ink); resize:vertical;" placeholder="Erzähl uns kurz von dir…"></textarea>
+          </div>
+
+          <p style="font-size:0.72rem; color:var(--ink-mute); line-height:1.6; margin-bottom:1rem;">
+            Mit dem Absenden stimmst du zu, dass wir deine Daten zur Bearbeitung deiner Bewerbung speichern.
+            <a href="datenschutz.html" style="color:var(--accent);">Datenschutz</a>
+          </p>
+
+          <div class="newsletter-pass__footer">
+            <span class="newsletter-pass__pnr">PNR<strong>GS·CREW·2026</strong><br>Wir melden uns persönlich</span>
+            <div class="newsletter-pass__barcode" aria-hidden="true"></div>
+            <button type="submit" class="newsletter-pass__submit">Bewerbung abschicken <span class="arrow">→</span></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
 <!-- Kontakt -->
-<section class="subpage-section">
+<section class="subpage-section subpage-section--cream">
   <div class="wrap" style="text-align: center;">
     <div class="page-head reveal">
       <span class="eyebrow">Fragen?</span>
@@ -407,7 +600,7 @@ build(
       <p>Ruf uns an oder schreib eine E-Mail — wir antworten persönlich und schnell.<br>
       <strong>04343 1859155</strong> · <strong>jobs@gut-salzig.de</strong></p>
     </div>
-    <a href="kontakt.html" class="btn btn--primary">Jetzt bewerben <span class="arrow">→</span></a>
+    <a href="kontakt.html" class="btn btn--primary">Kontakt aufnehmen <span class="arrow">→</span></a>
   </div>
 </section>
 '''
