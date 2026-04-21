@@ -7,6 +7,12 @@ Images-wordpress/
 Fotos-colored/
 gut salzig
 
+# PHP Config mit echten Credentials
+config.php
+
+# User uploads (dynamisch generiert)
+uploads/
+
 # Build artifacts
 *.pyc
 __pycache__/
