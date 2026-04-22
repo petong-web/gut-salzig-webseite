@@ -4,9 +4,9 @@
  */
 
 // ── HTML Escaping ──────────────────────────────────────────
-function h(string $s): string
+function h(?string $s): string
 {
-    return htmlspecialchars($s, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    return htmlspecialchars($s ?? '', ENT_QUOTES | ENT_HTML5, 'UTF-8');
 }
 
 // ── CSRF Protection ────────────────────────────────────────

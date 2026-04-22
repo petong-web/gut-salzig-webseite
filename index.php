@@ -313,10 +313,10 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY publis
 <?php if (!empty($tagesgerichte)): ?>
   <?php foreach ($tagesgerichte as $i => $dish): ?>
       <article class="celebration">
-        <?php if (!empty($dish['image'])): ?>
-        <img src="<?= h($dish['image']) ?>" alt="<?= h($dish['title']) ?>">
+        <?php if (!empty($dish['photo'])): ?>
+        <img src="<?= h($dish['photo']) ?>" alt="<?= h($dish['name'] ?? $dish['title'] ?? '') ?>">
         <?php else: ?>
-        <img src="prototype/assets/images/dish-<?= ($i % 3) + 1 ?>.jpg" alt="<?= h($dish['title']) ?>">
+        <img src="prototype/assets/images/dish-<?= ($i % 3) + 1 ?>.jpg" alt="<?= h($dish['name'] ?? $dish['title'] ?? '') ?>">
         <?php endif; ?>
         <div class="luggage-tag" aria-hidden="true">
           <span class="luggage-tag__number">No. <?= str_pad($i + 1, 2, '0', STR_PAD_LEFT) ?></span>
@@ -324,7 +324,7 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY publis
           <span class="luggage-tag__code"><?= h($dish['code'] ?? 'GS') ?></span>
         </div>
         <div class="celebration__body">
-          <h3><?= $dish['title_html'] ?? h($dish['title']) ?></h3>
+          <h3><?= $dish['title_html'] ?? null ?? h($dish['name'] ?? $dish['title'] ?? '') ?></h3>
           <p><?= h($dish['description'] ?? '') ?></p>
         </div>
       </article>
