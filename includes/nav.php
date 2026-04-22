@@ -1,8 +1,8 @@
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a href="index.php" class="nav__brand" aria-label="gut salzig">
-      <img src="assets/logo/logo2-wht.svg" alt="gut salzig" class="logo-wht">
-      <img src="assets/logo/logo2-blk.svg" alt="" class="logo-blk" aria-hidden="true">
+      <img src="prototype/assets/logo/logo2-wht.svg" alt="gut salzig" class="logo-wht">
+      <img src="prototype/assets/logo/logo2-blk.svg" alt="" class="logo-blk" aria-hidden="true">
     </a>
 
     <nav class="nav__menu">
@@ -29,7 +29,7 @@
 <div class="menu" id="menu">
   <div class="menu__top">
     <div class="menu__brand">
-      <img src="assets/logo/logo2-blk.svg" alt="gut salzig" style="height:44px;width:auto;">
+      <img src="prototype/assets/logo/logo2-blk.svg" alt="gut salzig" style="height:44px;width:auto;">
     </div>
     <button class="menu__close" id="menuClose" aria-label="Men&uuml; schlie&szlig;en">&times;</button>
   </div>

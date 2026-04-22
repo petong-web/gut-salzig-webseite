@@ -4,7 +4,7 @@
 
       <div class="footer__col footer__col--brand">
         <a href="index.php" class="footer__brand">
-          <img src="assets/logo/logo2-wht.svg" alt="gut salzig">
+          <img src="prototype/assets/logo/logo2-wht.svg" alt="gut salzig">
         </a>
         <p class="footer__tagline">&hellip;wie ein Tag Urlaub am Meer.</p>
         <div class="footer__social">
@@ -70,7 +70,7 @@
     <div class="footer__bottom">
       <span>&copy; 2026 gut salzig Beach Club &amp; Restaurant</span>
       <span class="footer__bottom-mark">
-        <img src="assets/logo/icon-wht.svg" alt="" aria-hidden="true">
+        <img src="prototype/assets/logo/icon-wht.svg" alt="" aria-hidden="true">
         <span>gut salzig &middot; Stein &middot; Ostsee</span>
       </span>
       <div class="footer__legal">
@@ -97,4 +97,4 @@
   <button class="cockpit__close" id="cockpitClose" aria-label="Cockpit-Widget schlie&szlig;en">&times;</button>
 </aside>
 
-<script src="assets/js/main.js"></script>
+<script src="prototype/assets/js/main.js"></script>
