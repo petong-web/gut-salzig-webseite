@@ -54,8 +54,8 @@ $count = count($items);
   <?= renderFlash() ?>
 
   <div class="topbar">
-    <h1>♪ <em>Bewerbungen</em></h1>
-    <a href="bewerbungen-edit.php" class="btn-new">+ Neu erstellen</a>
+    <h1>&female; <em>Bewerbungen</em></h1>
+    <span style="font-family:var(--ff-mono);font-size:0.8rem;color:var(--ink-mute);"><?= $count ?> Eintr&auml;ge</span>
   </div>
 
   <?php if (empty($items)): ?>
@@ -69,32 +69,30 @@ $count = count($items);
         <thead>
           <tr>
             <th>ID</th>
-            <th>Titel / Name</th>
+            <th>Name</th>
+            <th>Stelle</th>
             <th>Status</th>
             <th>Datum</th>
             <th>Aktionen</th>
           </tr>
         </thead>
         <tbody>
-        <?php foreach ($items as $item): ?>
-          <tr>
+        <?php foreach ($items as $item):
+          $unread = empty($item['is_read']);
+          $boldStyle = $unread ? 'font-weight:600;' : '';
+        ?>
+          <tr style="<?= $boldStyle ?>">
             <td><?= $item['id'] ?></td>
-            <td><?= h($item['title'] ?? $item['name'] ?? $item['eyebrow'] ?? $item['vorname'] ?? '—') ?></td>
+            <td><?= h(($item['vorname'] ?? '') . ' ' . ($item['nachname'] ?? '')) ?></td>
+            <td style="font-size:0.8rem;"><?= h($item['stelle'] ?? '—') ?></td>
             <td>
-              <?php
-                $active = $item['is_active'] ?? $item['is_published'] ?? $item['is_read'] ?? null;
-                if ($active !== null):
-              ?>
-                <span class="status <?= $active ? 'status--active' : 'status--inactive' ?>">
-                  <?= $active ? 'Aktiv' : 'Inaktiv' ?>
-                </span>
-              <?php else: ?>
-                —
-              <?php endif; ?>
+              <span class="status <?= $unread ? 'status--inactive' : 'status--active' ?>">
+                <?= $unread ? 'Neu' : 'Gelesen' ?>
+              </span>
             </td>
-            <td style="font-family:var(--ff-mono);font-size:0.75rem;"><?= date('d.m.Y', strtotime($item['created_at'] ?? $item['event_date'] ?? $item['week_date'] ?? 'now')) ?></td>
+            <td style="font-family:var(--ff-mono);font-size:0.75rem;"><?= date('d.m.Y', strtotime($item['created_at'] ?? 'now')) ?></td>
             <td class="actions">
-              <a href="bewerbungen-edit.php?id=<?= $item['id'] ?>">Bearbeiten</a>
+              <a href="bewerbung-read.php?id=<?= $item['id'] ?>">Ansehen</a>
             </td>
           </tr>
         <?php endforeach; ?>

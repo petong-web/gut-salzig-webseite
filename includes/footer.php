@@ -1,0 +1,100 @@
+<footer class="footer">
+  <div class="wrap-wide">
+    <div class="footer__main">
+
+      <div class="footer__col footer__col--brand">
+        <a href="index.php" class="footer__brand">
+          <img src="assets/logo/logo2-wht.svg" alt="gut salzig">
+        </a>
+        <p class="footer__tagline">&hellip;wie ein Tag Urlaub am Meer.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="Google Reviews">Go</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Erkunden</h4>
+        <nav class="footer__nav-list">
+          <a href="index.php">Home</a>
+          <a href="kueche.php">K&uuml;che</a>
+          <a href="brunch.php">Sonntagsbrunch</a>
+          <a href="events.php">Events</a>
+          <a href="feiern.php">Hochzeiten &amp; Feiern</a>
+          <a href="galerie.php">Galerie</a>
+          <a href="jobs.php">Jobs</a>
+          <a href="kontakt.php">Kontakt</a>
+        </nav>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Besuch uns</h4>
+        <address class="footer__address">
+          Uferkoppel 10<br>
+          24235 Stein<br>
+          an der Kieler F&ouml;rde
+        </address>
+        <a href="tel:043431859155" class="footer__contact">04343 1859155</a>
+        <a href="mailto:flaschenpost@gut-salzig.de" class="footer__contact">flaschenpost@gut-salzig.de</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Flight Schedule</h4>
+        <div class="flight-schedule">
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Mo&ndash;Mi</span>
+            <span>Ruhetag</span>
+            <span class="flight-schedule__status flight-schedule__status--closed">Closed</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Do &middot; Fr</span>
+            <span>17 &ndash; 20</span>
+            <span class="flight-schedule__status flight-schedule__status--ontime">On&nbsp;Time</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Samstag</span>
+            <span>09 &ndash; 20</span>
+            <span class="flight-schedule__status flight-schedule__status--ontime">On&nbsp;Time</span>
+          </div>
+          <div class="flight-schedule__row">
+            <span class="flight-schedule__day">Sonntag</span>
+            <span>10 &ndash; 20</span>
+            <span class="flight-schedule__status flight-schedule__status--boarding">Boarding</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; 2026 gut salzig Beach Club &amp; Restaurant</span>
+      <span class="footer__bottom-mark">
+        <img src="assets/logo/icon-wht.svg" alt="" aria-hidden="true">
+        <span>gut salzig &middot; Stein &middot; Ostsee</span>
+      </span>
+      <div class="footer__legal">
+        <a href="impressum.php">Impressum</a>
+        <a href="datenschutz.php">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="sound-toggle" id="soundToggle" aria-label="Boarding-Sound abspielen">
+  <span class="sound-toggle__ring" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+</button>
+
+<aside class="cockpit" id="cockpit" aria-label="Wetter an der Kieler F&ouml;rde">
+  <span class="cockpit__dot"></span>
+  <div class="cockpit__label">Cockpit<br>F&ouml;rde</div>
+  <div class="cockpit__divider"></div>
+  <div class="cockpit__data">
+    <span class="cockpit__temp" id="cockpitTemp">19&deg;</span>
+    <span class="cockpit__meta" id="cockpitMeta">Sonne &middot; Wind 12 kn</span>
+  </div>
+  <button class="cockpit__close" id="cockpitClose" aria-label="Cockpit-Widget schlie&szlig;en">&times;</button>
+</aside>
+
+<script src="assets/js/main.js"></script>
