@@ -25,7 +25,7 @@ $events = dbQuery(
 );
 
 // Captain's Log: latest published blog posts
-$logEntries = dbQuery("SELECT * FROM blog_posts WHERE is_published = 1 ORDER BY published_at DESC LIMIT 3");
+$logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY published_at DESC LIMIT 3");
 ?>
 <!doctype html>
 <html lang="de">
