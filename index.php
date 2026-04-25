@@ -651,17 +651,45 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY publis
     $entryNum = str_pad(($entry['entry_number'] ?? (42 - $i)), 3, '0', STR_PAD_LEFT);
     $pubDate = !empty($entry['published_at']) ? formatDate($entry['published_at'], 'd.m.Y') : '';
     $isInsta = ($entry['entry_type'] ?? 'manual') === 'instagram';
-    $bodyText = $isInsta ? ($entry['instagram_caption'] ?? '') : ($entry['body'] ?? '');
-    $coverImg = $isInsta ? ($entry['instagram_image'] ?? '') : ($entry['photo'] ?? '');
+    $igEmbed = $isInsta ? igEmbedUrl($entry['instagram_url'] ?? '') : null;
   ?>
-      <article class="log-entry <?= $isInsta ? 'log-entry--instagram' : '' ?>">
-        <span class="log-entry__ribbon">
-          <?= $isInsta ? '📷 Instagram' : 'Entry' ?> &middot; <?= h($entryNum) ?>
-        </span>
-        <?php if (!empty($coverImg)): ?>
-          <a href="<?= $isInsta ? h($entry['instagram_url']) : '#' ?>" <?= $isInsta ? 'target="_blank" rel="noopener"' : '' ?> style="display:block;margin:0 -1.8rem 1rem; aspect-ratio:4/3; overflow:hidden;">
-            <img src="<?= h($coverImg) ?>" alt="<?= h($entry['title']) ?>" style="width:100%;height:100%;object-fit:cover;">
+    <?php if ($isInsta && $igEmbed): ?>
+      <article class="log-entry log-entry--instagram">
+        <span class="log-entry__ribbon">📷 Instagram &middot; <?= h($entryNum) ?></span>
+        <div class="log-entry__embed">
+          <iframe
+            src="<?= h($igEmbed) ?>"
+            scrolling="no"
+            allowtransparency="true"
+            frameborder="0"
+            loading="lazy"
+            allow="encrypted-media"
+            style="width:100%;border:0;background:#fff;min-height:560px;display:block;"></iframe>
+        </div>
+        <?php if (!empty($entry['instagram_caption']) && trim($entry['instagram_caption']) !== ''): ?>
+          <div class="log-entry__header" style="border-top:1px dashed var(--line);padding-top:0.8rem;margin-top:0.8rem;">
+            <h3 class="log-entry__title" style="font-size:1.1rem;"><?= h($entry['title']) ?></h3>
+          </div>
+          <p class="log-entry__body"><?= h($entry['instagram_caption']) ?></p>
+        <?php endif; ?>
+        <div class="log-entry__footer">
+          <a href="<?= h($entry['instagram_url']) ?>" target="_blank" rel="noopener"
+             style="font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);">
+            Auf Instagram &uarr;
           </a>
+          <div class="log-entry__author"><strong>@gut_salzig</strong>gut salzig</div>
+        </div>
+      </article>
+    <?php else:
+      $coverImg = $entry['photo'] ?? '';
+      $bodyText = $entry['body'] ?? '';
+    ?>
+      <article class="log-entry">
+        <span class="log-entry__ribbon">Entry &middot; <?= h($entryNum) ?></span>
+        <?php if (!empty($coverImg)): ?>
+          <div style="margin:0 -1.8rem 1rem; aspect-ratio:4/3; overflow:hidden;">
+            <img src="<?= h($coverImg) ?>" alt="<?= h($entry['title']) ?>" style="width:100%;height:100%;object-fit:cover;">
+          </div>
         <?php endif; ?>
         <div class="log-entry__header">
           <span class="log-entry__date">
@@ -674,14 +702,11 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY publis
           <p class="log-entry__body"><?= h($bodyText) ?></p>
         <?php endif; ?>
         <div class="log-entry__footer">
-          <?php if ($isInsta && !empty($entry['instagram_url'])): ?>
-            <a href="<?= h($entry['instagram_url']) ?>" target="_blank" rel="noopener" class="log-entry__signature" style="font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;">Auf Instagram&nbsp;→</a>
-          <?php else: ?>
-            <span class="log-entry__signature"><?= h($entry['author_initial'] ?? 'C.') ?></span>
-          <?php endif; ?>
+          <span class="log-entry__signature"><?= h($entry['author_initial'] ?? 'C.') ?></span>
           <div class="log-entry__author"><strong><?= h($entry['author'] ?? 'Crew') ?></strong>gut salzig</div>
         </div>
       </article>
+    <?php endif; ?>
   <?php endforeach; ?>
 <?php else: ?>
       <article class="log-entry">

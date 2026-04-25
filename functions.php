@@ -138,3 +138,28 @@ function generatePNR(string $date): string
 {
     return 'GS' . date('dmy', strtotime($date));
 }
+
+// ── Instagram Embed Helper ────────────────────────────────
+/**
+ * Extrahiert den Instagram-Shortcode aus einer Post-URL.
+ * https://www.instagram.com/p/ABC123/ → ABC123
+ * https://www.instagram.com/reel/XYZ789/ → XYZ789
+ */
+function igShortcode(?string $url): ?string
+{
+    if (!$url) return null;
+    if (preg_match('#instagram\.com/(?:p|reel|tv)/([\w-]+)#', $url, $m)) {
+        return $m[1];
+    }
+    return null;
+}
+
+/**
+ * Gibt die offizielle Instagram-Embed-URL zurück (ohne API-Token).
+ */
+function igEmbedUrl(?string $url, bool $captioned = true): ?string
+{
+    $code = igShortcode($url);
+    if (!$code) return null;
+    return 'https://www.instagram.com/p/' . $code . '/embed/' . ($captioned ? 'captioned/' : '');
+}
