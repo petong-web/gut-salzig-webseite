@@ -21,7 +21,10 @@ $items = dbQuery("SELECT * FROM blog ORDER BY published_at DESC, created_at DESC
   <?= renderFlash() ?>
   <div class="topbar">
     <h1>✎ <em>Captain's Log</em></h1>
-    <a href="blog-edit.php" class="btn-new">+ Neuer Eintrag</a>
+    <div style="display:flex;gap:0.7rem;">
+      <a href="blog-instagram-import.php" class="btn-new" style="background:linear-gradient(45deg,#fa7e1e,#d62976);">📷 Bulk-Import</a>
+      <a href="blog-edit.php" class="btn-new">+ Neuer Eintrag</a>
+    </div>
   </div>
 
   <?php if (empty($items)): ?>
