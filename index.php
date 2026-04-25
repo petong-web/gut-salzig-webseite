@@ -684,7 +684,7 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
     </div>
 
     <div style="text-align:center; margin-top: 3.5rem;" class="reveal">
-      <a href="captains-log.php" class="btn btn--outline">Alle Log-Eintr&auml;ge <span class="arrow">&rarr;</span></a>
+      <a href="news.php" class="btn btn--outline">Alle News <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>

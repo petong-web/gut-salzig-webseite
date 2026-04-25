@@ -20,7 +20,7 @@ $entries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALESCE(
 <section class="subpage-hero" style="min-height: 50vh;">
   <div class="subpage-hero__media"><img src="prototype/assets/images/hero-1.jpg" alt="Captain's Log"></div>
   <div class="subpage-hero__content">
-    <nav class="subpage-hero__breadcrumb"><a href="index.php">Home</a><span class="sep">/</span><span class="current">Captain's Log</span></nav>
+    <nav class="subpage-hero__breadcrumb"><a href="index.php">Home</a><span class="sep">/</span><span class="current">News</span></nav>
     <span class="subpage-hero__eyebrow">Logbuch &middot; News &middot; Geschichten</span>
     <h1 class="subpage-hero__title">Captain's<br><em>Log</em>.</h1>
     <p class="subpage-hero__sub">Was heute in der K&uuml;che passiert, was morgen auf den Tisch kommt und was das Meer an Geschichten ansp&uuml;lt.</p>
