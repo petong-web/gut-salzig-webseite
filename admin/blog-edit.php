@@ -207,8 +207,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="form-row s1">
         <div class="field">
-          <label for="instagram_caption">Caption / Auszug (optional)</label>
-          <textarea id="instagram_caption" name="instagram_caption" style="min-height:120px;" placeholder="Kurzer Text der auf der Website über/unter dem Embed steht. Falls leer: zeigt nur das eingebettete Instagram."><?= h($record['instagram_caption']) ?></textarea>
+          <label for="instagram_caption">Caption / Beitragstext</label>
+          <textarea id="instagram_caption" name="instagram_caption" style="min-height:200px;" placeholder="Hier den vollständigen Text des Instagram-Posts einfügen — wird direkt auf der Website in der Captain's-Log-Kachel angezeigt. Zeilenumbrüche bleiben erhalten. Hashtags sind erlaubt."><?= h($record['instagram_caption']) ?></textarea>
+          <p class="help" style="margin-top:0.5rem;">
+            <strong>Tipp:</strong> Kopiere den kompletten Caption-Text aus deinem Instagram-Post hier rein — Besucher der Website lesen ihn direkt in der Kachel ohne zu Instagram weitergeleitet zu werden. Lange Captions werden mit Fade ausgeblendet und beim Hover voll angezeigt.
+          </p>
         </div>
       </div>
 
