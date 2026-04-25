@@ -2834,6 +2834,64 @@ section { padding-block: clamp(5rem, 10vw, 10rem); position: relative; }
   box-shadow: 0 18px 40px -20px rgba(31, 20, 12, 0.2);
 }
 
+/* Captain's Log Slider */
+.log-slider {
+  position: relative;
+  margin-inline: calc(-1 * clamp(1.5rem, 4vw, 3rem));
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
+}
+.log-slider__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(320px, calc((100% - 3.2rem) / 3));
+  gap: 1.6rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 0.5rem;
+}
+.log-slider__track::-webkit-scrollbar { display: none; }
+.log-slider__track > .log-entry { scroll-snap-align: start; }
+.log-slider__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+  box-shadow: 0 8px 24px -10px rgba(31, 20, 12, 0.2);
+  transform: translateY(-50%);
+}
+.log-slider__nav:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.05);
+}
+.log-slider__nav:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: translateY(-50%) scale(0.95);
+}
+.log-slider__nav--prev { left: -10px; }
+.log-slider__nav--next { right: -10px; }
+@media (max-width: 720px) {
+  .log-slider__track { grid-auto-columns: minmax(280px, 85vw); }
+  .log-slider__nav { display: none; }
+}
+
 /* Instagram-Eintrag als Foto-Karte mit Caption */
 .log-entry--instagram .log-entry__ribbon {
   background: linear-gradient(45deg, #fa7e1e, #d62976);

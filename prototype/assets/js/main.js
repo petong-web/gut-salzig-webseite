@@ -120,6 +120,28 @@
     setInterval(tick, 30000);
   }
 
+  /* ---------- Captain's Log Slider ---------- */
+  const logSlider = document.getElementById('logSlider');
+  const logTrack  = document.getElementById('logSliderTrack');
+  if (logSlider && logTrack) {
+    const prev = logSlider.querySelector('.log-slider__nav--prev');
+    const next = logSlider.querySelector('.log-slider__nav--next');
+    const card = logTrack.querySelector('.log-entry');
+    const cardW = () => (card ? card.offsetWidth + 26 : 340);
+
+    const update = () => {
+      const max = logTrack.scrollWidth - logTrack.clientWidth - 4;
+      prev.disabled = logTrack.scrollLeft <= 4;
+      next.disabled = logTrack.scrollLeft >= max;
+    };
+
+    prev?.addEventListener('click', () => logTrack.scrollBy({ left: -cardW(), behavior: 'smooth' }));
+    next?.addEventListener('click', () => logTrack.scrollBy({ left:  cardW(), behavior: 'smooth' }));
+    logTrack.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   /* ---------- Smooth Scroll ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {

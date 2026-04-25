@@ -25,7 +25,7 @@ $events = dbQuery(
 );
 
 // Captain's Log: latest published blog posts
-$logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALESCE(published_at, created_at) DESC, id DESC LIMIT 3");
+$logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALESCE(published_at, created_at) DESC, id DESC LIMIT 9");
 
 // Bewertungen (Testimonials) — neueste zuerst
 try {
@@ -588,7 +588,11 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
       <p>Kleine Eintr&auml;ge aus dem Logbuch &mdash; was heute in der K&uuml;che passiert, was morgen auf den Tisch kommt und was das Meer an Geschichten ansp&uuml;lt.</p>
     </div>
 
-    <div class="captains-log__grid reveal-stagger">
+    <div class="log-slider reveal" id="logSlider">
+      <button class="log-slider__nav log-slider__nav--prev" aria-label="Vorherige Eintr&auml;ge">‹</button>
+      <button class="log-slider__nav log-slider__nav--next" aria-label="N&auml;chste Eintr&auml;ge">›</button>
+
+      <div class="log-slider__track" id="logSliderTrack">
 <?php if (!empty($logEntries)): ?>
   <?php foreach ($logEntries as $i => $entry):
     $entryNum = str_pad(($entry['entry_number'] ?? (42 - $i)), 3, '0', STR_PAD_LEFT);
@@ -676,10 +680,11 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
         </div>
       </article>
 <?php endif; ?>
+      </div>
     </div>
 
     <div style="text-align:center; margin-top: 3.5rem;" class="reveal">
-      <a href="#" class="btn btn--outline">Alle Log-Eintr&auml;ge <span class="arrow">&rarr;</span></a>
+      <a href="captains-log.php" class="btn btn--outline">Alle Log-Eintr&auml;ge <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
