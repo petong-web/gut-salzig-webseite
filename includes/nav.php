@@ -51,7 +51,7 @@
       <p>Direkt an der Kieler F&ouml;rde.<br>Uferkoppel 10, 24235 Stein</p>
       <div class="hours">
         <span><strong>Do&ndash;Fr</strong> 17 &ndash; 20 Uhr</span>
-        <span><strong>Sa</strong> Fr&uuml;hst&uuml;ck ab 09 &middot; bis 20 Uhr</span>
+        <span><strong>Sa</strong> Fr&uuml;hst&uuml;ck 9:30 &ndash; 11:30 &middot; bis 20 Uhr</span>
         <span><strong>So</strong> Brunch 10 &ndash; 14 &middot; bis 20 Uhr</span>
       </div>
       <a href="tel:043431859155" class="link">04343 1859155 &rarr;</a>

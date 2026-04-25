@@ -163,6 +163,27 @@ CREATE TABLE IF NOT EXISTS bewerbungen (
     created_at  DATETIME     DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS reviews (
+    id            INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    author_name   VARCHAR(100) NOT NULL,
+    author_photo  VARCHAR(500),
+    rating        TINYINT      NOT NULL DEFAULT 5,
+    text          TEXT         NOT NULL,
+    review_date   DATE         DEFAULT NULL,
+    source        VARCHAR(50)  DEFAULT 'Google',
+    is_active     TINYINT(1)   DEFAULT 1,
+    sort_order    INT          DEFAULT 0,
+    created_at    DATETIME     DEFAULT CURRENT_TIMESTAMP,
+    updated_at    DATETIME     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_active (is_active, sort_order)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS settings (
+    `key`        VARCHAR(100) PRIMARY KEY,
+    `value`      TEXT,
+    updated_at   DATETIME     DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE IF NOT EXISTS newsletter (
     id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name        VARCHAR(100),

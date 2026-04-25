@@ -54,7 +54,7 @@
           </div>
           <div class="flight-schedule__row">
             <span class="flight-schedule__day">Samstag</span>
-            <span>09 &ndash; 20</span>
+            <span>9:30 &ndash; 20</span>
             <span class="flight-schedule__status flight-schedule__status--ontime">On&nbsp;Time</span>
           </div>
           <div class="flight-schedule__row">

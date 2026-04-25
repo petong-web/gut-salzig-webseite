@@ -59,13 +59,13 @@ $brunchDate = $brunch ? formatDate($brunch['week_date'], 'l, d. F Y') : 'Sonntag
     <div class="brunch__days" style="max-width: 900px; margin: 0 auto 4rem; grid-template-columns: 1fr 1fr; gap: 1.4rem;">
       <div class="brunch__day">
         <div class="brunch__day-label">Samstag</div>
-        <div class="brunch__day-title">Fr&uuml;hst&uuml;ck<br>&agrave; la carte</div>
-        <div class="brunch__day-meta">Ab 09:00 Uhr &middot; aus der Karte bestellen<br>von klassisch bis ausgefallen</div>
+        <div class="brunch__day-title">Fr&uuml;hst&uuml;cks-<br>Buffet</div>
+        <div class="brunch__day-meta">9:30 &ndash; 11:30 Uhr &middot; 20,50 &euro; p. P.<br>vielf&auml;ltige Auswahl am Buffet</div>
       </div>
       <div class="brunch__day brunch__day--highlight">
         <div class="brunch__day-label">Sonntag</div>
         <div class="brunch__day-title">Brunch-<br>Buffet</div>
-        <div class="brunch__day-meta">10 &ndash; 14 Uhr &middot; <?= $brunch ? h($brunch['price'] ?? '29') : '29' ?> &euro; p. P.<br>w&ouml;chentlich neues Men&uuml;</div>
+        <div class="brunch__day-meta">10 &ndash; 14 Uhr &middot; 33,80 &euro; p. P.<br>w&ouml;chentlich neues Men&uuml;</div>
       </div>
     </div>
   </div>

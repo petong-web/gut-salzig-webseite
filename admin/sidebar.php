@@ -24,6 +24,7 @@ try {
     <a href="speisekarte.php"       class="<?= $page === 'speisekarte' ? 'is-active' : '' ?>"><span class="icon">✦</span> Speisekarte</a>
     <a href="blog.php"              class="<?= $page === 'blog' ? 'is-active' : '' ?>"><span class="icon">✎</span> Captain's Log</a>
     <a href="jobs.php"              class="<?= $page === 'jobs' ? 'is-active' : '' ?>"><span class="icon">★</span> Jobs</a>
+    <a href="reviews.php"           class="<?= $page === 'reviews' ? 'is-active' : '' ?>"><span class="icon">⭐</span> Bewertungen</a>
     <a href="kontakt-messages.php"  class="<?= $page === 'kontakt' ? 'is-active' : '' ?>">
       <span class="icon">♥</span> Nachrichten
       <?php if ($unreadMsg > 0): ?><span class="badge"><?= $unreadMsg ?></span><?php endif; ?>

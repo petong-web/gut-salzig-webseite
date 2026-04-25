@@ -26,6 +26,14 @@ $events = dbQuery(
 
 // Captain's Log: latest published blog posts
 $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALESCE(published_at, created_at) DESC, id DESC LIMIT 3");
+
+// Bewertungen (Testimonials) — neueste zuerst
+try {
+    $reviews = dbQuery("SELECT * FROM reviews WHERE is_active = 1 ORDER BY sort_order, COALESCE(review_date, created_at) DESC LIMIT 6");
+} catch (Exception $e) {
+    $reviews = [];
+}
+$featuredReview = !empty($reviews) ? $reviews[0] : null;
 ?>
 <!doctype html>
 <html lang="de">
@@ -172,7 +180,7 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALES
       <div class="tile__inner">
         <div class="tile__kicker">Samstag &amp; Sonntag</div>
         <h3 class="tile__title">Fr&uuml;hst&uuml;ck &amp;<br><em>Brunch</em></h3>
-        <p class="tile__desc">Samstag: Fr&uuml;hst&uuml;ck &agrave; la carte. Sonntag: gro&szlig;er Brunch mit w&ouml;chentlich wechselndem Men&uuml;.</p>
+        <p class="tile__desc">Samstag: Fr&uuml;hst&uuml;cks-Buffet 9:30–11:30 Uhr (20,50 &euro;). Sonntag: gro&szlig;er Brunch 10–14 Uhr (33,80 &euro;).</p>
         <span class="tile__arrow">Entdecken</span>
       </div>
     </a>
@@ -239,13 +247,13 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALES
         <div class="brunch__days">
           <div class="brunch__day">
             <div class="brunch__day-label">Samstag</div>
-            <div class="brunch__day-title">Fr&uuml;hst&uuml;ck<br>&agrave; la carte</div>
-            <div class="brunch__day-meta">Ab 09:00 Uhr &middot; aus der Karte bestellen</div>
+            <div class="brunch__day-title">Fr&uuml;hst&uuml;ck-<br>Buffet</div>
+            <div class="brunch__day-meta">9:30 &ndash; 11:30 Uhr &middot; 20,50 &euro; p. P.</div>
           </div>
           <div class="brunch__day brunch__day--highlight">
             <div class="brunch__day-label">Sonntag</div>
             <div class="brunch__day-title">Brunch-<br>Buffet</div>
-            <div class="brunch__day-meta">10 &ndash; 14 Uhr &middot; <?= $brunch ? h($brunch['price'] ?? '29') : '29' ?> &euro; p. P. &middot; w&ouml;chentlich neu</div>
+            <div class="brunch__day-meta">10 &ndash; 14 Uhr &middot; 33,80 &euro; p. P. &middot; w&ouml;chentlich neu</div>
           </div>
         </div>
 
@@ -604,6 +612,13 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALES
           <p>Familienfest am Wasser</p>
         </div>
       </article>
+      <article class="celebration">
+        <img src="prototype/assets/images/cel-firmenfeier.jpg" alt="Beerdigungen">
+        <div class="celebration__body">
+          <h3><em>Trauer</em>feier</h3>
+          <p>Würdiger Abschied am Meer</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -777,13 +792,22 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALES
       <div class="testimonials__content reveal">
         <span class="eyebrow">Was G&auml;ste sagen</span>
         <h2>Stimmen aus<br>unserem <em>Gastraum</em>.</h2>
-        <p class="testimonials__quote">&bdquo;Ein Ort, an dem die Zeit stehenbleibt. Der Brunch war traumhaft, die Atmosph&auml;re genau das, was man nach einer langen Woche braucht &mdash; wirklich wie ein Tag Urlaub am Meer.&ldquo;</p>
+<?php if ($featuredReview): ?>
+        <p class="testimonials__quote">&bdquo;<?= h($featuredReview['text']) ?>&ldquo;</p>
+        <div class="testimonials__author">
+          <span><strong><?= h($featuredReview['author_name']) ?></strong></span>
+          <span class="testimonials__stars"><?= str_repeat('&#9733;', (int)$featuredReview['rating']) ?></span>
+          <span><?= h($featuredReview['source'] ?? 'Google') ?>&nbsp;Bewertung</span>
+        </div>
+<?php else: ?>
+        <p class="testimonials__quote">&bdquo;Ein Ort, an dem die Zeit stehenbleibt. Der Brunch war traumhaft &mdash; wirklich wie ein Tag Urlaub am Meer.&ldquo;</p>
         <div class="testimonials__author">
           <span><strong>Julia K.</strong></span>
           <span class="testimonials__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span>Google Bewertung</span>
         </div>
-        <a href="#" class="link">Alle Bewertungen &rarr;</a>
+<?php endif; ?>
+        <a href="https://www.google.com/maps/place/gut+salzig" target="_blank" rel="noopener" class="link">Alle Google-Bewertungen &rarr;</a>
       </div>
     </div>
   </div>
@@ -866,6 +890,7 @@ $logEntries = dbQuery("SELECT * FROM blog WHERE is_published = 1 ORDER BY COALES
 <section class="announcement">
   <div class="wrap">
     <div class="section-head reveal">
+      <span class="eyebrow">Newsletter</span>
       <h2>Abonniere unser<br><em>Logbuch</em>.</h2>
       <p>Einmal im Monat eine Durchsage in dein Postfach. W&auml;hle deine Destinations und lande genau bei den News, die dich interessieren.</p>
     </div>

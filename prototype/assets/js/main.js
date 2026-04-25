@@ -53,9 +53,16 @@
     const dots = dotsWrap.querySelectorAll('button');
 
     const go = (next, manual = false) => {
-      slides[current].classList.remove('is-active');
-      dots[current].classList.remove('is-active');
+      const prevSlide = slides[current];
+      const prevDot = dots[current];
       current = (next + slides.length) % slides.length;
+      // Vorherigen Slide nach links rausgleiten lassen
+      prevSlide.classList.remove('is-active');
+      prevSlide.classList.add('is-leaving');
+      prevDot.classList.remove('is-active');
+      // Nach Animation Klasse entfernen, damit Slide für nächste Runde wieder rechts startet
+      setTimeout(() => prevSlide.classList.remove('is-leaving'), 1400);
+      // Neuen Slide einblenden
       slides[current].classList.add('is-active');
       dots[current].classList.add('is-active');
       if (manual) reset();

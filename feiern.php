@@ -53,6 +53,9 @@ $description = "Hochzeiten, Firmenfeiern, JGA, Weihnachtsfeiern und Familienfest
       <article class="celebration">
         <img src="prototype/assets/images/cel-konfirmation.jpg" alt="Konfirmation"><div class="celebration__body"><h3><em>Konfirmation</em></h3><p>Familienfest am Wasser</p></div>
       </article>
+      <article class="celebration">
+        <img src="prototype/assets/images/cel-firmenfeier.jpg" alt="Trauerfeier"><div class="celebration__body"><h3><em>Trauer</em>feier</h3><p>W&uuml;rdiger Abschied am Meer</p></div>
+      </article>
     </div>
   </div>
 </section>
