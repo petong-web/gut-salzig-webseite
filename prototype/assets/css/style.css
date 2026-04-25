@@ -1617,6 +1617,24 @@ section { padding-block: clamp(5rem, 10vw, 10rem); position: relative; }
 .subpage-hero__bar-flight { color: var(--gold); font-weight: 600; }
 
 /* Subpage section helpers */
+/* ---- Resmio Reservierungs-Widget ---- */
+.resmio-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  box-shadow:
+    0 1px 0 rgba(31, 20, 12, 0.04),
+    0 30px 60px -25px rgba(31, 20, 12, 0.18);
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.resmio-wrap > div { width: 100%; }
+.resmio-wrap iframe { max-width: 100% !important; width: 100% !important; border: 0 !important; }
+
 /* ---- Menu Card (Speisekarte) ---- */
 .menu-card {
   max-width: 900px;

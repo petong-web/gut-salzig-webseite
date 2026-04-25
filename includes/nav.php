@@ -13,12 +13,13 @@
       <a href="feiern.php">Feiern</a>
       <a href="galerie.php">Galerie</a>
       <a href="jobs.php">Jobs</a>
+      <a href="reservieren.php">Reservieren</a>
       <a href="kontakt.php">Kontakt</a>
     </nav>
 
     <div class="nav__right">
       <a href="tel:043431859155" class="nav__phone">04343 1859155</a>
-      <a href="kontakt.php" class="nav__reserve">Reservieren</a>
+      <a href="reservieren.php" class="nav__reserve">Reservieren</a>
       <button class="nav__burger" id="navBurger" aria-label="Men&uuml; &ouml;ffnen">
         <span></span><span></span>
       </button>
@@ -43,7 +44,8 @@
       <li><a href="feiern.php"  data-num="05">Hochzeiten &amp; Feiern</a></li>
       <li><a href="galerie.php" data-num="06">Galerie</a></li>
       <li><a href="jobs.php"    data-num="07">Jobs &amp; Karriere</a></li>
-      <li><a href="kontakt.php" data-num="08">Kontakt</a></li>
+      <li><a href="reservieren.php" data-num="08">Reservieren</a></li>
+      <li><a href="kontakt.php" data-num="09">Kontakt</a></li>
     </ul>
 
     <aside class="menu__aside">

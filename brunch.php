@@ -95,7 +95,7 @@ $brunchDate = $brunch ? formatDate($brunch['week_date'], 'l, d. F Y') : 'Sonntag
 <?php endif; ?>
         </ul>
 
-        <a href="kontakt.php" class="btn btn--primary">Platz reservieren <span class="arrow">&rarr;</span></a>
+        <a href="reservieren.php" class="btn btn--primary">Platz reservieren <span class="arrow">&rarr;</span></a>
       </div>
       <div class="brunch__image reveal">
         <span class="brunch__badge">Live &middot; jeden Sonntag neu</span>

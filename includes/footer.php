@@ -24,6 +24,7 @@
           <a href="feiern.php">Hochzeiten &amp; Feiern</a>
           <a href="galerie.php">Galerie</a>
           <a href="jobs.php">Jobs</a>
+          <a href="reservieren.php">Reservieren</a>
           <a href="kontakt.php">Kontakt</a>
         </nav>
       </div>

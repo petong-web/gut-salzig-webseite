@@ -59,12 +59,13 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
       <a href="#events">Events</a>
       <a href="#feiern">Feiern</a>
       <a href="#galerie">Galerie</a>
+      <a href="reservieren.php">Reservieren</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
 
     <div class="nav__right">
       <a href="tel:043431859155" class="nav__phone">04343 1859155</a>
-      <a href="#kontakt" class="nav__reserve">Reservieren</a>
+      <a href="reservieren.php" class="nav__reserve">Reservieren</a>
       <button class="nav__burger" id="navBurger" aria-label="Men&uuml; &ouml;ffnen">
         <span></span><span></span>
       </button>
@@ -90,8 +91,9 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
       <li><a href="#brunch"       data-num="03">Sonntagsbrunch</a></li>
       <li><a href="#events"       data-num="04">Events</a></li>
       <li><a href="#feiern"       data-num="05">Hochzeiten &amp; Feiern</a></li>
-      <li><a href="#galerie"      data-num="06">Galerie</a></li>
-      <li><a href="#kontakt"      data-num="07">Kontakt</a></li>
+      <li><a href="#galerie"        data-num="06">Galerie</a></li>
+      <li><a href="reservieren.php" data-num="07">Reservieren</a></li>
+      <li><a href="#kontakt"        data-num="08">Kontakt</a></li>
     </ul>
 
     <aside class="menu__aside">
@@ -151,7 +153,7 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
     </h1>
     <p class="hero__sub">Deutsche Kreativ-K&uuml;che, Sonntagsbrunch und Feiern &mdash; direkt an der Kieler F&ouml;rde.<br>Ankommen. Genie&szlig;en. Entschleunigen.</p>
     <div class="hero__actions">
-      <a href="#kontakt" class="btn btn--accent">Tisch reservieren <span class="arrow">&rarr;</span></a>
+      <a href="reservieren.php" class="btn btn--accent">Tisch reservieren <span class="arrow">&rarr;</span></a>
       <a href="#angebot" class="btn btn--ghost">Entdecken</a>
     </div>
   </div>
@@ -272,7 +274,7 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
 <?php endif; ?>
         </ul>
 
-        <a href="brunch.php" class="btn btn--primary">Platz reservieren <span class="arrow">&rarr;</span></a>
+        <a href="reservieren.php" class="btn btn--primary">Platz reservieren <span class="arrow">&rarr;</span></a>
       </div>
       <div class="brunch__image reveal">
         <span class="brunch__badge">Live &middot; jeden Sonntag neu</span>
@@ -295,7 +297,7 @@ $featuredReview = !empty($reviews) ? $reviews[0] : null;
     <span class="eyebrow">Direkt am Wasser</span>
     <h2>Essen, wo der<br><em>Horizont</em> beginnt.</h2>
     <p>Unsere Terrasse liegt nur wenige Schritte vom Wasser entfernt. Bei Sonnenuntergang wird das Meer zu einem Teil der Speisekarte.</p>
-    <a href="#kontakt" class="btn btn--accent">Jetzt reservieren <span class="arrow">&rarr;</span></a>
+    <a href="reservieren.php" class="btn btn--accent">Jetzt reservieren <span class="arrow">&rarr;</span></a>
   </div>
 </section>
 

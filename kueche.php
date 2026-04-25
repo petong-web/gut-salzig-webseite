@@ -194,7 +194,7 @@ foreach ($speisekarte as $item) {
     </div>
 
     <div style="text-align:center; margin-top: 3rem;" class="reveal">
-      <a href="kontakt.php" class="btn btn--primary">Tisch reservieren <span class="arrow">&rarr;</span></a>
+      <a href="reservieren.php" class="btn btn--primary">Tisch reservieren <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
